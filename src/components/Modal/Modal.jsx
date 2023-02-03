@@ -17,8 +17,16 @@ export const Modal = ({largeImageURL, tags, closeModal}) => {
     };
   };
 
+  const onClickClose = event => {
+    if (event.currentTarget === event.target) {
+      closeModal();
+    }
+  };
+    
+
+
   return (
-    <div className={css.overlay} onClick={closeModal}>
+    <div className={css.overlay} onClick={onClickClose}>
       <div className={css.modal}>
         <img src={largeImageURL} alt={tags} />
       </div>
